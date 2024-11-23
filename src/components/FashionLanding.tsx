@@ -40,7 +40,7 @@ const FashionLanding = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
  
   // Nuevo estado para el idioma
-  const [currentLanguage, setCurrentLanguage] = useState('es');
+  //const [currentLanguage, setCurrentLanguage] = useState('es');
  
   // Actualizar searchableItems para que coincidan con las rutas dinámicas
   const searchableItems: SearchItem[] = [
