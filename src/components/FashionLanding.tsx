@@ -195,7 +195,7 @@ const FashionLanding = () => {
           <div className="relative w-12 h-12">
             <img
               src="/images/logo/hs-logo.svg"
-              alt="Herland Salazar"
+              alt="Herlan Salazar"
               className="w-full h-full object-contain brightness-0 invert"
             />
           </div>
@@ -423,7 +423,7 @@ const FashionLanding = () => {
         <div className="relative w-full h-full"> {/* Contenedor adicional para Image con fill */}
           <Image
             src="/images/about/herlan-profile.jpg"
-            alt="Herland Salazar"
+            alt="Herlan Salazar"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
@@ -438,7 +438,7 @@ const FashionLanding = () => {
       <h2 className="text-4xl font-bold mb-8">SOBRE MÍ</h2>
       <div className="space-y-4 text-gray-300">
         <p>
-          Soy Herland Salazar, diseñador de moda con una pasión por crear 
+          Soy Herlan Salazar, diseñador de moda con una pasión por crear 
           piezas que reflejen la individualidad y elegancia de cada persona.
           Mi viaje en el mundo de la moda comenzó con un sueño de transformar
           la forma en que las personas se expresan a través de la ropa.
@@ -603,7 +603,7 @@ const FashionLanding = () => {
       <div className="w-16 h-16">
         <img
           src="/images/logo/hs-logo.svg"
-          alt="Herland Salazar"
+          alt="Herlan Salazar"
           width={48}  // añadir width explícito
           height={48} // añadir height explícito
           className="w-full h-full object-contain brightness-0 invert"
