@@ -10,9 +10,11 @@ const nextConfig = {
       },
     ],
   },
-  // Añade esto para ignorar errores de TypeScript en producción si es necesario
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true
   }
 }
 

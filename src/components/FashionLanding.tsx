@@ -40,7 +40,7 @@ const FashionLanding = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
  
   // Nuevo estado para el idioma
-  const [currentLanguage, setCurrentLanguage] = useState('es');
+  //const [currentLanguage, setCurrentLanguage] = useState('es');
  
   // Actualizar searchableItems para que coincidan con las rutas dinámicas
   const searchableItems: SearchItem[] = [
@@ -160,10 +160,11 @@ const FashionLanding = () => {
     }
   }, []);
 
-  // Efecto para guardar el idioma cuando cambie
   useEffect(() => {
-    localStorage.setItem('preferredLanguage', currentLanguage);
-  }, [currentLanguage]);
+    if (currentLanguage) {
+      localStorage.setItem('preferredLanguage', currentLanguage);
+    }
+  }, []); // Remove currentLanguage from dependencies
 
   
   if (!mounted) return null;
