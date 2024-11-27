@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import Link from 'next/link';
 import Image from 'next/image';
 
+
 // Tipos para la búsqueda
 type SearchItem = {
   id: string;
@@ -153,18 +154,18 @@ const FashionLanding = () => {
 
   // AÑADIR ESTOS DOS NUEVOS useEffect AQUÍ
   // Efecto para cargar el idioma guardado al iniciar
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    if (savedLanguage && (savedLanguage === 'es' || savedLanguage === 'en')) {
-      setCurrentLanguage(savedLanguage);
-    }
-  }, []);
+ // useEffect(() => {
+ //   const savedLanguage = localStorage.getItem('preferredLanguage');
+ //   if (savedLanguage && (savedLanguage === 'es' || savedLanguage === 'en')) {
+ //     setCurrentLanguage(savedLanguage);
+ //   }
+ // }, []);
 
-  useEffect(() => {
-    if (currentLanguage) {
-      localStorage.setItem('preferredLanguage', currentLanguage);
-    }
-  }, []); // Remove currentLanguage from dependencies
+ // useEffect(() => {
+ //   if (currentLanguage) {
+ //     localStorage.setItem('preferredLanguage', currentLanguage);
+ //   }
+//  }, []); // Remove currentLanguage from dependencies
 
   
   if (!mounted) return null;
@@ -336,10 +337,13 @@ const FashionLanding = () => {
     transform: `translateY(${scrollY * 0.3}px)`
   }}
 >
-  <h1 className="text-6xl md:text-8xl font-bold text-white mb-8">
-    COLECCIÓN
+  {/*<h1 className="text-6xl md:text-8xl font-bold text-white mb-8">*/}
+  <h1 className={`${blackOpsOne.className} text-6xl md:text-8xl font-bold text-white mb-8`}>
+  <span className="text-8xl block">C</span>
+  <span className="text-4xl tracking-widest">OLECCIÓN</span>
     <br />
-    JAQUE MATE
+    <span className="text-8xl block">J</span>
+    <span className="text-4xl tracking-widest">AQUE MATE</span>
   </h1>
   <div className="space-y-4">
     <button className="w-48 bg-white text-black px-8 py-3 hover:bg-gray-100 transition-colors">

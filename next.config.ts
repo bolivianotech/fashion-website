@@ -15,7 +15,13 @@ const nextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true
-  }
+  },
+  // Añade esto para mejor manejo de errores
+  onError: async (err, req, res) => {
+    console.error(err);
+    res.statusCode = 500;
+    res.end('Internal Server Error');
+  },
 }
 
 module.exports = nextConfig

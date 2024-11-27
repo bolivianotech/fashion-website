@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Orbitron } from 'next/font/google';
+import { Black_Ops_One } from 'next/font/google';
 import "./globals.css";
+
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+});
+
+const blackOpsOne = Black_Ops_One({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 const inter = Inter({ subsets: ['latin'] });
 
