@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+//import { Teko } from 'next/font/google';
+
+//const teko = Teko({
+//  weight: ['300', '400', '500'],
+//  subsets: ['latin'],
+//});
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -36,7 +42,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/images/logo/hs-logo.svg" />
       </head>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={`${inter.className}`} suppressHydrationWarning>
         {children}
       </body>
     </html>

@@ -91,101 +91,71 @@ const CollectionDetail = () => {
     );
   }
 
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Barra de navegación */}
-      <nav className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link 
-            href="/"
-            className="group flex items-center text-gray-600 hover:text-black transition-colors"
-          >
-            <ArrowLeft className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-            <span>Volver</span>
-          </Link>
-        </div>
-      </nav>
+return (
+  <div className="min-h-screen bg-white">
+    <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center">
+        <Link 
+          href="/"
+          className="flex items-center text-gray-800 hover:text-black transition-colors"
+        >
+          <ArrowLeft className="h-5 w-5 mr-2" />
+          <span>Volver</span>
+        </Link>
+      </div>
+    </nav>
 
-      {/* Contenido principal */}
-      <main className="pt-16"> {/* Ajuste para la nav fija */}
-        {/* Sección Hero */}
-        <div className="bg-black text-white">
-          <div className="max-w-7xl mx-auto px-4 py-12">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Imagen principal */}
-              <div className="relative aspect-[3/4] bg-gray-900 rounded-lg overflow-hidden">
+    <div className="pt-16"> 
+      <div className="max-w-5xl mx-auto px-4 py-8">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          {/* Contenedor de imagen significativamente reducido */}
+          <div className="w-full flex justify-center">
+            <div className="w-[25%] sm:w-[35%] md:w-[25%]"> {/* Reducido significativamente */}
+              <div className="aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden shadow-md">
                 <img
-                  src={collection.images[activeImage]}
+                  src={collection.images[0]}
                   alt={collection.title}
-                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ maxWidth: '100%', height: 'auto' }} // Asegurar que la imagen no exceda el contenedor
                 />
-              </div>
-
-              {/* Información */}
-              <div className="space-y-8">
-                <h1 className="text-4xl md:text-5xl font-bold">{collection.title}</h1>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  {collection.description}
-                </p>
-                <div className="space-y-4">
-                  <h2 className="text-xl font-semibold">Características</h2>
-                  <ul className="space-y-3">
-                    {collection.features.map((feature, index) => (
-                      <li 
-                        key={index}
-                        className="flex items-center space-x-3 hover:translate-x-2 transition-transform"
-                      >
-                        <span className="w-2 h-2 bg-yellow-400 rounded-full"/>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Galería de imágenes */}
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <h2 className="text-2xl font-bold mb-8">Galería</h2>
-          <div className="grid grid-cols-3 gap-4">
-            {collection.images.map((image, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveImage(index)}
-                className={`relative aspect-square overflow-hidden rounded-lg 
-                  ${activeImage === index ? 'ring-2 ring-yellow-400' : ''}
-                  hover:opacity-90 transition-opacity`}
-              >
-                <img
-                  src={image}
-                  alt={`${collection.title} - Vista ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </button>
-            ))}
-          </div>
-        </div>
+          {/* Columna de información más compacta */}
+          <div className="sticky top-24 space-y-4 max-w-md">
+            <div>
+              <h1 className="text-xl font-bold mb-2">{collection.title}</h1>
+              <p className="text-gray-600 text-sm">{collection.description}</p>
+            </div>
 
-        {/* Sección CTA */}
-        <div className="bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 py-16">
-            <div className="text-center space-y-6">
-              <h2 className="text-3xl font-bold">¿Interesado en esta colección?</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Agenda una cita para ver las piezas en persona y recibir asesoramiento personalizado.
-              </p>
-              <button className="bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-900 
-                               transition-colors hover:shadow-lg">
+            <div className="py-3 border-y border-gray-200">
+              <h2 className="font-medium mb-3 text-sm">Características</h2>
+              <ul className="space-y-2">
+                {collection.features.map((feature, index) => (
+                  <li key={index} className="flex items-center text-sm">
+                    <span className="w-1 h-1 bg-black rounded-full mr-2" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="pt-3">
+              <button className="w-full bg-black text-white px-4 py-2 rounded-md 
+                               hover:bg-gray-900 transition-all duration-300 
+                               text-sm font-medium">
                 Solicitar Información
               </button>
+              <p className="text-xs text-gray-500 text-center mt-2">
+                Recibe asesoramiento personalizado
+              </p>
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
-  );
+  </div>
+);
 };
-
 export default CollectionDetail;

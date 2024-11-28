@@ -40,7 +40,7 @@ const FashionLanding = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
  
   // Nuevo estado para el idioma
-  const [currentLanguage, setCurrentLanguage] = useState('es');
+ // const [currentLanguage, setCurrentLanguage] = useState('es');
  
   // Actualizar searchableItems para que coincidan con las rutas dinámicas
   const searchableItems: SearchItem[] = [
@@ -153,17 +153,17 @@ const FashionLanding = () => {
 
   // AÑADIR ESTOS DOS NUEVOS useEffect AQUÍ
   // Efecto para cargar el idioma guardado al iniciar
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    if (savedLanguage && (savedLanguage === 'es' || savedLanguage === 'en')) {
-      setCurrentLanguage(savedLanguage);
-    }
-  }, []);
+//  useEffect(() => {
+//    const savedLanguage = localStorage.getItem('preferredLanguage');
+//    if (savedLanguage && (savedLanguage === 'es' || savedLanguage === 'en')) {
+//      setCurrentLanguage(savedLanguage);
+//    }
+//  }, []);
 
   // Efecto para guardar el idioma cuando cambie
-  useEffect(() => {
-    localStorage.setItem('preferredLanguage', currentLanguage);
-  }, [currentLanguage]);
+  //useEffect(() => {
+  //  localStorage.setItem('preferredLanguage', currentLanguage);
+  //}, [currentLanguage]);
 
   
   if (!mounted) return null;
@@ -335,11 +335,17 @@ const FashionLanding = () => {
     transform: `translateY(${scrollY * 0.3}px)`
   }}
 >
-  <h1 className="text-6xl md:text-8xl font-bold text-white mb-8">
-    COLECCIÓN
-    <br />
-    JAQUE MATE
-  </h1>
+  {/*<h1 className="text-6xl md:text-8xl font-bold text-white mb-8">*/}
+  <h1 className="mb-8 relative inline-flex flex-col items-start">
+      <div className="flex items-center">
+        <span className="text-9xl text-white leading-none font-light pr-2">J</span> {/* Añadido pr-6 */}
+        <div className="flex flex-col -ml-2"> {/* Ajustado margen negativo */}
+          <span className="text-6xl text-white tracking-[0.3em] mb-[-0.25rem] font-light translate-y-2">AQUE</span>
+          {/* Añadido translate-y-2 para alinear mejor verticalmente */}
+          <span className="text-6xl text-white tracking-[0.3em] font-light">MATE</span>
+        </div>
+      </div>
+    </h1>
   <div className="space-y-4">
     <button className="w-48 bg-white text-black px-8 py-3 hover:bg-gray-100 transition-colors">
       DESCUBRIR MÁS
